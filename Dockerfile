@@ -1,5 +1,5 @@
 # Specify the Base Image that we are building this new image from
-FROM node:16
+FROM public.ecr.aws/docker/library/node:16
 
 # Set the working directory inside the image
 # Similar to the "cd" command
