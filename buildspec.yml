@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+     - npm install
+  build:
+    commands:
+     - docker build -t 168116352293.dkr.ecr.us-east-1.amazonaws.com/my-node-backend:latest .
+  post_build:
+    commands:
+     - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 168116352293.dkr.ecr.us-east-1.amazonaws.com
+     - docker push 168116352293.dkr.ecr.us-east-1.amazonaws.com/my-node-backend:latest
+
+artifacts:
+  files:
+   - appspec.yml
+   - scripts/**/*
