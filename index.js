@@ -14,7 +14,7 @@ app.use(cors({ // S3 bucket frontend origin, EC2 (nginx) frontend origin
 
 app.get('/test', (req, res) => {
     return res.send({
-        "message": "Hello there! Testing!"
+        "message": "Hello there!"
     });
 });
 
